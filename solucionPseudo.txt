@@ -1,0 +1,65 @@
+Inicio
+
+    Escribe "CAJA DE LA TIENDA"
+
+    unidades compradas = 0
+    importe antes del descuento = 0
+    descuento aplicado = 0
+    descuento = 0
+    importe final = 0
+    precio = 0
+    unidad = 0
+    importe = 0
+
+    Escribe "Introduce el precio unitario en euros (0 para terminar):"
+    Lee precio
+
+    Mientras precio < 0 hacer
+        Escribe "El precio no puede ser negativo."
+        Escribe "Introduce el precio unitario en euros (0 para terminar):"
+        Lee precio
+
+    Si precio == 0 entonces
+        Escribe "No se han registrado productos"
+    Sino
+        Mientras precio > 0 hacer
+            Escribe "Introduce el número de unidades:"
+            Lee unidad
+
+            Mientras unidad <= 0 hacer
+                Escribe "La cantidad debe ser mayor que 0"
+                Escribe "Introduce el número de unidades:"
+                Lee unidad
+            
+            importe = precio * unidad
+            importe antes del descuento = importe antes del descuento + importe
+            unidades compradas = unidades compradas + unidad
+
+            Escribe "Introduce el precio unitario en euros (0 para terminar):"
+            Lee precio
+
+            Mientras precio < 0 hacer
+                Escribe "El precio no puede ser negativo."
+                Escribe "Introduce el precio unitario en euros (0 para terminar):"
+                Lee precio
+
+        Si importe antes del descuento < 50 entonces
+            descuento aplicado = 0
+        Sino
+            Si importe antes del descuento < 100 entonces
+                descuento aplicado = 5
+            Sino
+                descuento aplicado = 10
+
+        descuento = importe antes del descuento * descuento aplicado / 100
+        importe final = importe antes del descuento - descuento
+
+        Escribe "RESUMEN DE LA COMPRA"
+        Escribe "Unidades compradas:" + unidades compradas
+        Escribe "Importe antes del descuento:" + importe antes del descuento + "euros"
+        Escribe "Descuento aplicado:" + descuento aplicado + "%"
+        Escribe "Descuento:" + descuento + "euros"
+        Escribe "Importe final:" + importe final + "euros"
+
+Fin
+	
